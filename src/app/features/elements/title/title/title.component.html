@@ -1,0 +1,19 @@
+<div class="title">
+  <div class="title-inner">
+    <div class="title-desc-btn">
+      <div class="title-description">
+        <p>Currency RUB</p>
+      </div>
+      <div class="add-btn">
+        <button #tooltip="matTooltip"
+                matTooltip="Add one more currency rate"
+                (click)="openAddCurrencyDialog()"><mat-icon>control_point</mat-icon></button>
+      </div>
+    </div>
+    <div class="current-time">
+      {{ currentData | date: 'dd.MM.yyyy, HH:mm:ss'}}
+    </div>
+  </div>
+</div>
+
+

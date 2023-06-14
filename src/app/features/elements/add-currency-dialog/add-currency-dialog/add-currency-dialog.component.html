@@ -1,0 +1,17 @@
+<div class="add-currency">
+  <div class="add-currency-inner">
+    <div class="add-currency-title">
+      <p *ngIf="addCurrencyNames.length !== 0">Add new currency to the list</p>
+      <p *ngIf="addCurrencyNames.length === 0">All available currency were added</p>
+    </div>
+    <div class="add-currency-options">
+      <div *ngFor="let item of addCurrencyNames"
+                (click)="addCurrency(item)">
+        <button mat-raised-button>{{item | uppercase}}</button>
+      </div>
+    </div>
+    <div class="add-currency-close-btn" *ngIf="addCurrencyNames.length === 0" >
+      <button (click)="closeDialog()" mat-flat-button>Close</button>
+    </div>
+  </div>
+</div>

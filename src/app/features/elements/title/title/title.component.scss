@@ -1,0 +1,26 @@
+.title {
+  .title-inner {
+    display: flex;
+    flex-direction: column;
+
+    .title-desc-btn {
+      display: flex;
+      justify-content: space-between;
+      font-size: 30px;
+
+      .add-btn {
+        button {
+          border: none;
+          outline: none;
+          background: none;
+          cursor: pointer;
+
+        }
+      }
+    }
+
+    .current-time {
+      font-size: 15px;
+    }
+  }
+}

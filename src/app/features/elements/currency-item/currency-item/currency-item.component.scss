@@ -1,0 +1,32 @@
+.currency-item {
+  margin: 20px 0px;
+
+  .currency-item-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .currency-item-name {
+      font-size: 25px;
+    }
+
+    .currency-item-rate {
+      font-size: 20px;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 10px;
+      border: 1px solid #000000;
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width 600px) {
+  .currency-item {
+    margin: 10px 0;
+
+    .currency-item-rate {
+      width: 250px;
+    }
+  }
+}
