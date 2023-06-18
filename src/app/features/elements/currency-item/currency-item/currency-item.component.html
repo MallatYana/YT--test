@@ -1,11 +1,11 @@
 <div class="currency-item">
   <div class="currency-item-inner">
     <div class="currency-item-name">
-      {{"aa" | uppercase}}
+      {{currency.name}}
     </div>
     <div class="currency-item-rate">
-      <span>{{ currentCurrencyRate }}</span> <mat-icon *ngIf="currentDif > 0">keyboard_arrow_up</mat-icon>
-      <mat-icon *ngIf="currentDif < 0">keyboard_arrow_down</mat-icon> <span>( {{currentCurrencyRate - lastCurrentRate}} )</span>
+      <span>{{ currency.currentRate }}</span> <mat-icon *ngIf="currentDif > 0">keyboard_arrow_up</mat-icon>
+      <mat-icon *ngIf="currentDif < 0">keyboard_arrow_down</mat-icon> <span>( {{currentDif | number : '1.2-2'}} )</span>
     </div>
   </div>
 </div>

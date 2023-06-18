@@ -8,16 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CurrencyItemComponent implements OnInit {
 
   @Input() currency?: any;
-  currentCurrencyRate!: number;
-  lastCurrentRate!: number;
   currentDif!: number;
 
   constructor() {
   }
 
   ngOnInit() {
-    this.currentDif = this.currentCurrencyRate - this.lastCurrentRate;
+    this.currentDif = this.currency.currentRate - this.currency.lastRate;
   }
-
 
 }

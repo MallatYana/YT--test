@@ -10,15 +10,15 @@ import { AddCurrencyDialogComponent} from "../../add-currency-dialog/add-currenc
 export class TitleComponent {
 
   @Input() elementsNames: string[] = [];
-  @Output() elementUsed: EventEmitter<string> | undefined;
+  @Output() elementUsed: EventEmitter<string> = new EventEmitter();
 
   currentData : Date = new Date();
+  usedName!: string;
 
   addCurrencyDialog: MatDialogRef<AddCurrencyDialogComponent> | undefined;
   constructor(
     private dialog: MatDialog
   ) { }
-
 
 
   openAddCurrencyDialog() {
@@ -31,8 +31,12 @@ export class TitleComponent {
       }
      });
 
-    this.addCurrencyDialog.afterClosed().subscribe(result => { });
+    this.addCurrencyDialog.afterClosed().subscribe(result => {
+      this.usedName = result;
+      this.elementUsed.emit(this.usedName);
+    });
   }
 
+  //i know it could be done without title component at all, but i wanted to use output even once
 }
 

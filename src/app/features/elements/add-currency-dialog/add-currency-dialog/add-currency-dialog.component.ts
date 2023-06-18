@@ -1,4 +1,4 @@
-import { Component, Inject, Output, EventEmitter } from '@angular/core';
+import { Component, Inject} from '@angular/core';
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -11,24 +11,21 @@ export class AddCurrencyDialogComponent {
   loading = true;
   addCurrencyNames!: string[];
 
-  @Output() nameUsed = new EventEmitter<string>();
-
   constructor(
     private dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) private data: any,
     public dialogRef: MatDialogRef<AddCurrencyDialogComponent>) {
     if (data) {
       this.addCurrencyNames = data.addCurrencyNames;
-      console.log(this.addCurrencyNames)
     }
   }
 
   addCurrency(name: string) {
     this.addCurrencyNames = this.addCurrencyNames.filter(n => n !== name);
-    this.nameUsed.emit(name);
+    this.closeDialog(name)
   }
 
-  closeDialog() {
-    this.dialogRef.close();
+  closeDialog(name: string) {
+    this.dialogRef.close(name);
   }
 }

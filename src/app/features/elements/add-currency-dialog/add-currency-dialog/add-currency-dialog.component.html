@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="add-currency-close-btn" *ngIf="addCurrencyNames.length === 0" >
-      <button (click)="closeDialog()" mat-flat-button>Close</button>
+      <button [mat-dialog-close]="true" mat-flat-button>Close</button>
     </div>
   </div>
 </div>

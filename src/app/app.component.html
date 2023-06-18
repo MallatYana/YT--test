@@ -1,2 +1,3 @@
-<app-title [elementsNames]="elementsNames"></app-title>
+<app-title [elementsNames]="elementsNames"
+           (elementUsed)="listChanged($event)"></app-title>
 <app-currency-list [elementsNames]="elementsNames"></app-currency-list>
